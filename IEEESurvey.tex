@@ -1,0 +1,758 @@
+
+%% bare_conf.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. The IEEE's font choices and paper sizes can   ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+\documentclass[conference]{IEEEtran}
+% Some Computer Society conferences also require the compsoc mode option,
+% but others use the standard conference format.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/pkg/ifpdf
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of the IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/pkg/cite
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+   \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics.
+%
+% Note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/amsmath
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/pkg/algorithms
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/pkg/algorithmicx
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/array
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a larger sans serif font
+% than the serif footnote size font used in traditional IEEE formatting
+% and thus the need to invoke different subfig.sty package options depending
+% on whether compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/pkg/subfig
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure.
+% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
+% corrections already built into the system in which case a warning will
+% be issued if an attempt is made to load fixltx2e.sty as it is no longer
+% needed.
+% The latest version and documentation can be found at:
+% http://www.ctan.org/pkg/fixltx2e
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/stfloats
+% Do not use the stfloats baselinefloat ability as the IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that the IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/pkg/dblfloatfix
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/url
+% Basically, \url{my_url_here}.
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\title{A Survey on Software-Defined Networking}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{\IEEEauthorblockN{Yaxiong Hu}
+\IEEEauthorblockA{School of Computing\\
+Clemson University\\
+SC, Clemson, 29630\\
+Email: yaxionh@g.clemson.edu}}
+
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract
+\begin{abstract}
+This survey paper focused on Software-Defined Networking(SDN). Firstly, the survey will compare the SDN with traditional networking, introducing what is SDN and why we need it. Secondly, the survey concentrated on basic knowledge about the SDN, put emphasis on SDN main techniques. Thirdly, explaining some issues exists in SDN. Finally, discuss some trends of the SDN.
+\end{abstract}
+
+% no keywords
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+There are three planes of functionality in computer networks: data plane, control plane, and management plane. The data plane does forwarding data in the devices. The control plane is protocols generating the forwarding tables based on the data. The management plane is software services monitoring and configuring the control plane.
+
+In Traditional IP networks, control plane and data planes are bundled together. For example, in traditional network devices including routers, switches, and Network Address Translators are independent with each other: each of them has the control plane and data plane. Therefore, each device needs manual configuration separately. In most cases, there are many devices related in each configuration, so the manual configuration can be tedious and error-prone.
+
+In brief, traditional IP network suffers from some shortcomings: manageability, flexibility, and extensibility. 
+Software-Defined Networking concept has been proposed to overcome these limitations, it separates the control plane from data plane to allow more flexibility like programmable and efficient management like better testing and troubleshooting.  
+
+
+\section{Main Techniques}
+% no \IEEEPARstart
+There are many techniques in Software-Defined Networking. They will be discussed in three aspects: the application part, the control part, and the data part. 
+
+In SDN, the data part is at the core of the network which is devices inside a network, the application part and control part is at the edge of network which is the border of a network like gateways. The routing function is stripped from switching devices (e.g. routers). As a consequence, the control functions in routers simplified to gather network status and report to the controller outside the switching devices.
+
+\subsection{The data plane}
+\begin{figure}[!t]
+\centering
+\includegraphics[width=2.5in]{1}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+\caption{OpenFlow Switch.}
+\label{fig_sim}
+\end{figure}
+
+The main function of the data plane in the network is packet forwarding which decided based on forwarding status and the packet header.
+
+In SDN, the data plane need the support of new hardware which installed an OpenFlow protocol as can be seen in Figure 1. The techniques as follows:
+
+
+\subsubsection{The forwarding bases on flow.}
+A flow is a set of packets sending between a source and a destination. There are reasons for using flow:
+
+a) It could unify the action of different type devices. 
+
+b) It could use a hardware for classification to increase processing throughput. 
+
+For example, we could use new hardware in NIC to do packet classification based on flow signatures. This would conserve the CPU resources.
+
+c) It could exploit the size of the flow. 
+
+For example, the flow with small size could be handled by CPU with relatively slower processing speed.
+
+
+\subsubsection{Packets will go through a pipeline of flow tables}
+\begin{figure}[!t]
+\centering
+\includegraphics[width=2.5in]{2}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+\caption{Flow Tables.}
+\label{fig_sim}
+\end{figure}
+Flow tables are controlled by a remote PC called a   controller via the secure channel. As we can see in Figure 2, the flow tables have three parts: 
+
+\paragraph{Matching rules}
+The rule consists of many matching fields, like IP src, IP dst, Switch port and so on.
+\paragraph{Actions}
+The actions are executed on matching packets and may drop the packet, forward it to next flow table or forward it to the controller after encapsulating it and so on.
+\paragraph{Counters}
+The counter is used for keep the statistics of matching packets.
+\subsection{The control plane}
+As can be seen from figure2, the control part is moved to an external entity called SDN controller. The goals of the control plane are:
+\subsubsection{Routing}
+Routing is building the forwarding table for each device. To achieve this, the control plane needs to figure out the topology of the network and decide how to finished a certain users’ requirement and policies on the topology. In SDN, the controller needs to tell switches the forwarding information. As we can see in figure 1. The control plane builds on the data plane, so it could reuse the information of topology.
+\subsubsection{Isolation}
+Isolation is making one network or devices isolated with others networks and devices. For example, ACLs, VLANs, and firewalls. Traffic engineering is adjusting the weights in the network to make the traffic get controlled.
+\subsubsection{Traffic engineering}
+The goal of traffic engineering is providing a fair utilization of the network. To achieve low power consuming or load balancing.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=2.5in]{3}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+\caption{SDN architecture.}
+\end{figure}
+
+As we can see in Figure 3, the control plane has two components: Control program and Network Operating System. NOS is the bottom one which offers an abstract topology for the Control program. So, it needs gathering information from physical devices. Control program computes the forwarding status for each switching device, then it needs NOS transporting the configuration information to switches.
+
+The control program should use the API provided by NOS(that is the Northbound API), so compared with the traditional distributed topology, it is easier to be managed and understand. The data plane will offer a southbound API for the NOS or controller to do data operations as a protocol like OpenFlow.
+
+Also, it could use MPLS in SDN. The benefit is bypassing the network layer to achieve a higher transfer speed.
+
+\subsection{The application plane}
+The application or management part becomes more powerful as it could program the network.
+\begin{figure}[!t]
+\centering
+\includegraphics[width=2.5in]{4}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+\caption{SDN architecture another perspective.}
+\end{figure}
+
+As we can see from in Figure 4. Application plane or management plane could build a language-based virtualization on the northbound interface. Beyond that, we could develop programming languages for programming applications. The benefit is we could reuse the design at different network conditions.
+
+There are many similarities between SDN programming languages and computer programming. 
+
+The first is avoiding the low-level configuration. For computer programming, low-level registers configuration is to determine when and what value should load into a register. The low-level devices’ configuration has the same condition in SDN.
+
+The second is providing abstractions to finish complexity works in an easier way. The third is programmers could focus on the problem-solving itself, so it is easier to create a reliable and creativity applications. Fourth, the SDN language also could have a “runtime system” to do the monitoring job.
+
+The applications could not only do jobs like routing, firewalls, load balancing, gateways, VPNS, and intrusion detecting but also explore new functions like power consumption. “Despite the wide variety of use cases, most SDN applications can be grouped in one of five categories: traffic engineering, mobility, and wireless, measurement and monitoring, security and dependability and data center networking.” [3]
+
+\section{Issues and Problems}
+There are some issues exist in SDN.
+
+\subsection{Security}
+Just like computer system and traditional network system, SDN system may suffer from basic some security problems like access control and authentication. However, there are some other security problems caused by SDN own characteristics:
+
+a) SDN programming language uses the third party library, some bad things will happen if the third party library is over trusted.
+
+b) The control plane in SDN is really vulnerable to be attacked by resource depletion attack techniques like DoS.
+
+c) If the SDN attacked by hackers, all the network will under the control of attackers which is different from traditional situations
+
+Some approaches are developed to solve security problems. One of them is using rule prioritization: the low priority application could not overwrite the high priority application. However, there are still a lot to do develop a dependable SDN architecture. [3]
+\subsection{Programmable}
+For control plane programming, one problem is that the topology may change. So, the programming must be at very high-level abstraction and left the detail for the NOS, it just likes the relation between language and compiler as well as OS. The network hypervisor will work between the Control program and NOS as a complier which transfers the virtual topology into physical devices configuration.
+
+In data plane, there are some approaches for programmable: ForCES, OpenFlow and POF. The basic idea of these approaches is to modify the devices to support the flow tables and the operations like add, delete, and update could be done through remote control devices.
+
+
+\subsection{Performance evaluation}
+Performance evaluation is a big issue in SDN. If we could do a good evaluation for SDN, we could build more sound network production.
+
+One method is the simulation. By the analytic models, we could easy to know the scalability, bottlenecks and so on of the SDN network. The evaluation aspects are lookup performance, the influence of packet size and rules, the bottleneck and the impact of the configuration. For example, if we use DPDK, the hardware part in NIC could provide monitoring on the traffic at the hypervisor level. The total performance is hard to measure in traditional devices because of the difference of hardware or architecture.
+
+However, there are still not enough research for performance evaluation issue. 
+\subsection{Scalability}
+ One problem for decoupling the control plane and data plane is scalability. The flow tables need to be configured in time by the remote node. So it is a limitation for scalability.
+
+  The main techniques to solve this problem are DevoFlow, SDC and so on, which can be seen in [3].
+
+
+
+\section{Future Trends}
+The trend for SDN is keeping the core component to be simple and push the complexity to the edge component.
+The hardware network will go to be “dumb pipes” and the software at the edge will be more and more implemented in software.
+ 
+There are some other trends as follow:
+
+\subsection{Data Plane Programmability}
+According to [1], the author thinks we should focus more on the data plane programmability. Data plane program in an efficient way is important because it involves more low-level techniques like caching, compression, encryption and so on.
+
+
+\subsection{Platform Independence}
+In the future, just like hardware for programmers, the devices will become more transparent for programmers and more and more programs will become platform independence.
+
+
+\subsection{Deployment}
+Early SDN deployments mainly exist at campus network and data center. Because data center should be designed to offer high flexible bandwidth and low latency, SDN is very suitable for the data center. SDN could offer improved management, optimized network utilization, real-time monitoring, problem detection and so on. The trend of SDN in a data center is detecting abnormal behaviors in the network by techniques like build signatures for applications to achieve security. 
+
+Out of campus world or data center, it is difficult to replace traditional network by SDN though SDN has many benefits. The price to replace the old devices to new SDN devices is huge. So, in the future, before the successful of SDN, there are still many problems to be solved in deployment.
+\subsection{User-driven Control}
+Users may base more on the code programmed by others, that is the reuse. This trend can be seen in [1].
+
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that the IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command,
+% and the \label for the overall figure must come after \caption.
+% \hfil is used as a separator to get equal spacing.
+% Watch out that the combined width of all the subfigures on a 
+% line do not exceed the text width or a line break will occur.
+%
+%\begin{figure*}[!t]
+%\centering
+%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
+%\label{fig_second_case}}
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat[]), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
+% labels, the optional argument to \subfloat must be present. If a
+% subcaption is not desired, just leave its contents blank,
+% e.g., \subfloat[].
+
+
+% An example of a floating table. Note that, for IEEE style tables, the
+% \caption command should come BEFORE the table and, given that table
+% captions serve much like titles, are usually capitalized except for words
+% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
+% and up, which are usually not capitalized unless they are the first or
+% last word of the caption. Table text will default to \footnotesize as
+% the IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that the IEEE does not put floats in the very first column
+% - or typically anywhere on the first page for that matter. Also,
+% in-text middle ("here") positioning is typically not used, but it
+% is allowed and encouraged for Computer Society conferences (but
+% not Computer Society journals). Most IEEE journals/conferences use
+% top floats exclusively. 
+% Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the
+% \fnbelowfloat command of the stfloats package.
+
+
+
+
+\section{Conclusion}
+This survey discussed the SDN technologies. First discuss the reason traditional networks are become more complex and harder to manage when it scales larger. Second mainly about the control plane, the data plane and the application plane in SDN. Finally discussed some main issues and the future of SDN.
+SDN is a fascinating technique, in particular, it could provide the programmability no matter in the application plane and in the data plane. In fact, the SDN is the way towards next generation networking. The survey discussed problems remain unsolved in SDN, such as security problem. If we solve these problems, we will have a better SDN in the future.
+
+
+
+
+% conference papers do not normally have an appendix
+
+
+
+% conference papers do not normally have an appendix
+
+
+% use section* for acknowledgment
+%\section*{Acknowledgment}
+%
+%
+%The authors would like to thank...
+
+
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+%\begin{thebibliography}{5}
+
+%\bibliographystyle{IEEEtran}
+%@article{kreutz2015software,
+%  title={Software-defined networking: A comprehensive survey},
+%  author={Kreutz, Diego and Ramos, Fernando MV and Verissimo, Paulo Esteves and Rothenberg, Christian Esteve and Azodolmolky, Siamak and Uhlig, Steve},
+%  journal={Proceedings of the IEEE},
+%  volume={103},
+%  number={1},
+%  pages={14--76},
+%  year={2015},
+%  publisher={IEEE}
+%}
+%\bibliography{IEEEabrv,../bib/paper}
+%\end{thebibliography}
+%\bibliographystyle{IEEEtran}
+%\bibliographystyle{./IEEEtran}
+%\bibitem{IEEEhowto:kopka}
+%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+
+\begin{thebibliography}{5}
+
+ \bibitem{Software-defined networking: A survey} 
+Farhady, H., Lee, H., Nakao, A. 
+\textit{Software-defined networking: A survey}. 
+Computer Networks, 81, 79-95. 2015.
+
+ \bibitem{A survey of software-defined networking: Past, present, and future of programmable networks} 
+Nunes, B. A. A., Mendonca, M., Nguyen, X. N., Obraczka, K., Turletti, T.
+\textit{A survey of software-defined networking: Past, present, and future of programmable networks}.
+IEEE Communications Surveys And Tutorials, 16(3), 1617-1634. 2014.
+
+ \bibitem{Software-defined networking: A comprehensive survey} 
+Kreutz, D., Ramos, F. M., Verissimo, P. E., Rothenberg, C. E., Azodolmolky, S.,  Uhlig, S.
+\textit{Software-defined networking: A comprehensive survey}. 
+Proceedings of the IEEE, 103(1), 14-76. 2015.
+
+ \bibitem{A survey on software-defined networking} 
+Xia, W., Wen, Y., Foh, C. H., Niyato, D., And Xie, H.
+\textit{A survey on software-defined networking}. 
+IEEE Communications Surveys And Tutorials, 17(1), 27-51. 2015.
+
+ \bibitem{ Software-Defined Networking at the Crossroads} 
+Stanford Seminar.
+\textit{ Software-Defined Networking at the Crossroads}. 
+https://www.youtube.com/watch?v=WabdXYzCAOU
+
+\end{thebibliography}
+
+
+
+
+
+
+
+% that's all folks
+\end{document}
+
+

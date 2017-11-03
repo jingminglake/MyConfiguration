@@ -25,3 +25,5 @@ alias ......='cd ../../../../..'
 alias rootFile='sudo nautilus'
 alias compress='tar -zcvf'
 alias extract='tar -zxvf'
+alias pin='ping www.google.com'
+alias gc="git commit -m 'new changes'"
